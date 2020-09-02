@@ -1,5 +1,6 @@
 package com.amazon.product.controller;
 
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.amazon.product.model.Product;
+import com.amazon.product.model.dto.CustomerDTO;
 import com.amazon.product.service.ProductService;
 
 import io.swagger.annotations.Api;
@@ -65,8 +67,14 @@ public class ProductController {
 	}
 	
 	@ApiOperation("delete produto por id")
-	@DeleteMapping()
+	@DeleteMapping
 	void deleteById(@RequestParam Integer id) {
 		service.deleteById(id);
+	}
+	
+	@ApiOperation("adicionar itens na lista de desejos")
+	@PostMapping("/wishlist")	
+	void saveWishList(@RequestBody CustomerDTO customerDTO) throws URISyntaxException {
+		service.saveWishList(customerDTO);
 	}
 }

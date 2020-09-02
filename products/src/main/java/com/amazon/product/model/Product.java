@@ -23,7 +23,7 @@ public class Product {
 	private Integer id;
 	private String name;
 	private String detail;
-	@Column(columnDefinition = "default 0")
+	@Column(columnDefinition = "integer default 0")
 	private Integer preview;
 	@ManyToOne
 	private Category category;
