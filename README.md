@@ -9,7 +9,7 @@ solução baseada em Microserviços.
 
 # Tools
 * MySQLServer
-* RabbitMQ
+* Docker
 * Eclipse ou IDE de sua preferência
 * Postman
 
@@ -18,6 +18,17 @@ solução baseada em Microserviços.
 * db_help
 * db_orderstatus
 * db_product
+
+# Rode imagem RabbitMQ
+* docker run -d -p 5672:5672 -p 15672:15672 --name=rabbitmq rabbitmq:3.8.3-management
+
+# Inicie os serviços
+* eurekaserver  -- http://localhost:8761/
+* products      -- http://localhost:8081/swagger-ui.html#/
+* customers     -- http://localhost:8082/swagger-ui.html#/
+* orderstatus   -- http://localhost:8083/swagger-ui.html#/
+* help          -- http://localhost:8084/swagger-ui.html#/
+* help-consumer -- http://localhost:8085/
 
 # Entrega
 * Possibilidade de visualizar os produtos de um determinado gênero;
