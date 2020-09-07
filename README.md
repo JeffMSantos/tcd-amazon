@@ -10,6 +10,7 @@ solução baseada em Microserviços.
 # Tools
 * MySQLServer
 * Docker
+* JAVA 8 ou superior
 * Eclipse ou IDE de sua preferência
 * Postman
 
@@ -29,3 +30,5 @@ solução baseada em Microserviços.
 * orderstatus   -- http://localhost:8083/swagger-ui.html#/
 * help          -- http://localhost:8084/swagger-ui.html#/
 * help-consumer -- http://localhost:8085/
+
+# Importe a collection no Postman e execute os endpoints
