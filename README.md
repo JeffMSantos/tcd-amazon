@@ -40,6 +40,10 @@ solução baseada em Microserviços.
 * help          -- http://localhost:8084/swagger-ui.html#/
 * help-consumer -- http://localhost:8085/
 
-# Importe a collection no Postman e execute os endpoints
+# Importe a collection no Postman 
+
+tcd-amazon.postman_collection.json
+
+# Execute os endpoints e valide a solução
 
 ![Alt text](https://github.com/JeffMSantos/tcd-amazon/blob/master/image/collection.PNG)
