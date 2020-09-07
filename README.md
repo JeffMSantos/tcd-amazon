@@ -32,3 +32,5 @@ solução baseada em Microserviços.
 * help-consumer -- http://localhost:8085/
 
 # Importe a collection no Postman e execute os endpoints
+
+![Alt text](https://github.com/JeffMSantos/tcd-amazon/blob/master/image/collection.PNG)
