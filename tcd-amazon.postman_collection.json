@@ -1,0 +1,544 @@
+{
+	"info": {
+		"_postman_id": "64e4470b-22fa-4aa3-a429-29724ad1fbd3",
+		"name": "tcd-amazon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "criar produto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"name\": \"Consoles e Jogos\"\r\n  },\r\n\r\n  \"genre\": {\r\n    \"id\": 1,\r\n    \"name\": \"Esporte\"\r\n  },\r\n  \"id\": 0,\r\n  \"name\": \"FIFA 20\",\r\n  \"detail\": \"Jogo de Futebol\",\r\n  \"preview\": 0\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "visualizar detalhes do produto  e soma 1 view por acesso",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/products?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar produtos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/products/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar produtos por genero",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/products/genre?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products",
+								"genre"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar produtos por palavra chave",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/products/keyword?keyword=FIFA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products",
+								"keyword"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "FIFA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "produtos mais vistos por categoria",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/products/views/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products",
+								"views",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "acessa serviço customer e adiciona item na lista de desejo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"Jeff\",\r\n  \"wishList\": [\r\n    {\r\n      \"idProduct\": 1,\r\n      \"nameProduct\": \"FIFA 20\"\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8081/products/wishlist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products",
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleta produto",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/products?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "customers",
+			"item": [
+				{
+					"name": "adiciona item na lista de desejo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"Jeff\",\r\n  \"wishList\": [\r\n    {\r\n      \"id\": 0,\r\n      \"idProduct\": 12,\r\n      \"nameProduct\": \"IPhone 11 PRO\"\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/customers/wishlist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"customers",
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "orderstatus",
+			"item": [
+				{
+					"name": "criar order status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"address\": {\r\n    \"city\": \"Barueri\",\r\n    \"district\": \"JARDIM BELVAL\",\r\n    \"id\": 0,\r\n    \"state\": \"SP\",\r\n    \"street\": \"AV HENRIQUE G BATISTA\",\r\n    \"zipCode\": \"00000-00\"\r\n  },\r\n  \"id\": 0,\r\n  \"idCustomer\": 1,\r\n  \"nameCustomer\": \"JEFF\",\r\n  \"resume\": {\r\n    \"amount\": 1,\r\n    \"deliveryForecast\": \"2020-09-07T21:56:04.388Z\",\r\n    \"id\": 0,\r\n    \"nameProduct\": \"SMART TV\",\r\n    \"valueProduct\": 2500\r\n  },\r\n  \"status\": \"RECEIVED\",\r\n  \"trackingNumber\": \"00000000\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8083/orderstatus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"orderstatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "acompanhar os dados do pedido",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/orderstatus/customer?idCustomer=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"orderstatus",
+								"customer"
+							],
+							"query": [
+								{
+									"key": "idCustomer",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar dados pedido",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"RECEIVED\",\r\n  \"trackingNumber\": \"1111111111\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8083/orderstatus?idOrderstatus=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"orderstatus"
+							],
+							"query": [
+								{
+									"key": "idOrderstatus",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "help",
+			"item": [
+				{
+					"name": "criar lista de opções de chamado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Your Orders\",\r\n  \"id\": 0,\r\n  \"options\": \"Your Orders\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8084/help/options",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"help",
+								"options"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar opções de chamado",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8084/help/options",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"help",
+								"options"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criar chamado e envia para a fila",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"idCustomer\": 1,\r\n  \"option\": {\r\n    \"description\": \"Your Orders\",\r\n    \"id\": 1,\r\n    \"options\": \"Your Orders\"\r\n  },\r\n  \"problem\": \"Não recebi o meu pedido\",\r\n  \"status\": \"OPEN\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8084/help",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"help"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar chamados",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8084/help/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"help",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar status do chamado",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"CLOSED\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8084/help?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"help"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

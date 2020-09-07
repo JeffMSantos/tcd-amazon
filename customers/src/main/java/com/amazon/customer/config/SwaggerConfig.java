@@ -23,8 +23,8 @@ public class SwaggerConfig {
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("TCD-AMAZON! Costomer REST API")
-				.description("\"Service integration for Costumer\"").version("1.0.0")
+		return new ApiInfoBuilder().title("TCD-AMAZON! Customer REST API")
+				.description("\"Service integration for Customer\"").version("1.0.0")
 				.license("Apache License Version 2.0").licenseUrl("https://www.apache.org/licenses/LICENSE-2.0\"")
 				.build();
 	}
