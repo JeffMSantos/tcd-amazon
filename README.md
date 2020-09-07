@@ -17,3 +17,17 @@ solução baseada em Microserviços.
 * Possibilidade de abrir um chamado técnico de algum problema que está acontecendo;
 * Possibilidade de acompanhar os dados do seu pedido;
 * Possibilidade de calcular o frete de uma compra;
+
+# Tools
+MySQLServer
+RabbitMQ
+Eclipse ou IDE de sua preferência
+Postman
+
+# Environment configuration
+
+Criar os database abaixo:
+db_customer
+db_help
+db_orderstatus
+db_product
