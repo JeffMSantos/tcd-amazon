@@ -19,6 +19,7 @@ solução baseada em Microserviços.
 # Tools
 * MySQLServer
 * Docker
+* MAVEN
 * JAVA 8 ou superior
 * Eclipse ou IDE de sua preferência
 * Postman
