@@ -40,6 +40,7 @@ solução baseada em Microserviços.
 * orderstatus   -- http://localhost:8083/swagger-ui.html#/
 * help          -- http://localhost:8084/swagger-ui.html#/
 * help-consumer -- http://localhost:8085/
+* shippingfee   -- http://localhost:8087/swagger-ui.html#/
 
 # Importe a collection no Postman 
 
