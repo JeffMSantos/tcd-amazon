@@ -538,6 +538,43 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "shippingfee",
+			"item": [
+				{
+					"name": "calcula frete",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8087/shipping?zipCode=06420130",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"shipping"
+							],
+							"query": [
+								{
+									"key": "zipCode",
+									"value": "06420130"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}
